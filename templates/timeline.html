@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<a class="button go-back" href="/search?query={{data.name}}">Go back</a>
+	<a id="download" class="button" href>
+		<span class="icon">
+			<i class="fa fa-download"></i>
+		</span>
+		Download
+	</a>
+
+	<div id="downloadable">
+		<div class="header">
+			{% if data.picture %}
+				<div class="img" style="background-image: url('{{ data.picture }}')"></div>
+			{% endif %}
+			<div class="info">
+				<h1>{{ data.name }}</h1>
+				<p>{{ data.dates[0].datetime.strftime(data.dates[0].format) }} - {{ data.dates[1].datetime.strftime(data.dates[1].format) }}</p>
+			</div>
+		</div>
+
+		<div class="timeline">
+
+			<span class="line"></span>
+
+			{% for hit in data.hits %}
+			<div class="hit">
+				<div class="date">
+					{{ hit.date }}
+				</div>
+				<span class="dot"></span>
+				<div class="content">
+					{{ hit.content }}
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="footer">
+		<img class="logo" src="/static/img/logo.svg"/>
+	</div>
+
+	<script src="/static/js/html2canvas.js"></script>
+	<script src="/static/js/download.js"></script>
+{% endblock %}

@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #fff;
+	color: #111;
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+
+	width: 90%;
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 100px 50px;
+}
+
+.button {
+	display: inline-block;
+    vertical-align: top;
+	width: auto;
+    height: auto;
+    text-align: center;
+	background: #0085AC;
+    font-size: 16px;
+    color: #ffffff;
+	text-decoration: none;
+	text-transform: none;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+	transition: all .2s ease-in-out;
+}
+
+.button:hover,
+.button:active {
+	opacity: .9;
+}
+
+.button .icon {
+	margin-right: 5px;
+	font-size: inherit;
+}
+
+.search-form, .search-form form {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	height: auto;
+}
+
+.search-form form {font-size: 0;}
+
+.search-form form input {
+	display: inline-block;
+	vertical-align: top;
+	width: 65%;
+	height: auto;
+	margin: 0 5% 0 0;
+	padding: 10px 20px;
+	border: 1px solid #dddddd;
+	color: #007b9f;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Raleway', sans-serif;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.search-form form .button {
+	width: 30%;
+	font-size: 20px;
+}
+
+.search-form .results {
+	display: inline-block;
+	vertical-align: top;
+	width: 65%;
+	height: auto;
+	border: 1px solid #eee;
+	list-style: none;
+}
+
+.search-form .results .item,
+.search-form .results .item a {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	height: auto;
+	text-decoration: none;
+}
+
+.search-form .results .item a {
+	position: relative;
+	padding: 10px 20px;
+	color: #111;
+	transition: all .2s ease-in-out;
+}
+
+.search-form .results .item a:hover,
+.search-form .results .item a:active {
+	background: #007b9f;
+	color: #ffffff;
+}
+
+.search-form .results .item a::after {
+	content: 'Get timeline →';
+	position: absolute;
+	bottom: 0; right: 0;
+	width: auto;
+	height: auto;
+	font-size: 14px;
+	padding: 5px 10px;
+	color: transparent;
+	transition: all .2s ease-in-out;
+}
+
+.search-form .results .item a:hover::after,
+.search-form .results .item a:active::after {color: #ccc;}
+
+.go-back {
+	font-size: 16px;
+}
+
+.header {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+	height: auto;
+	font-size: 0;
+}
+
+.header .img {
+	display: inline-block;
+	vertical-align: top;
+	width: 150px;
+	height: 150px;
+	margin-right: 5%;
+	border-radius: 50%;
+	border: 3px solid #007b9f;
+	overflow: hidden;
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.header .info {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(95% - 150px);
+	height: 80px;
+	padding: 35px 0;
+	line-height: 40px;
+	font-size: 16px;
+}
+
+.timeline {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 100%;
+	margin: 50px 0 0;
+}
+
+.timeline .line {
+	position: absolute;
+	left: 35%;
+	width: 5px;
+	height: 100%;
+	background: #eee;
+}
+
+.timeline .hit {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 100%;
+	height: auto;
+	padding: 20px 0;
+	font-size: 0;
+}
+
+.timeline .hit .dot {
+	position: absolute;
+	top: 30px; left: 35%;
+	margin-left: -6px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #007b9f;
+}
+
+.timeline .hit .date {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 30%;
+	height: 36px;
+	line-height: 36px;
+	margin: 0 5% 0 0;
+	font-size: 16px;
+	background: #eee;
+	text-align: center;
+	border-radius: 3px;
+}
+
+.timeline .hit .date::before {
+	content: '';
+	position: absolute;
+	top: 2px; right: -14px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 16px 0 16px 15px;
+	border-color: transparent transparent transparent #eeeeee;
+}
+
+.timeline .hit .content {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 60%;
+	height: auto;
+	margin-left: 5%;
+	padding: 10px 20px;
+	font-size: 16px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
+
+.timeline .hit .content::after {
+	content: '';
+	position: absolute;
+	top: 2px; left: -16px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 16px 15px 16px 0;
+	border-color: transparent #efefef transparent transparent;
+}
+
+.footer	{
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+
+.footer .logo {
+	position: absolute;
+	left: 35%;
+	transform: translateX(-50%);
+	width: auto;
+	height: 50px;
+}
