@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+	<div class="search-form">
+		<img class="logo" src="/static/img/logo.svg"/>
+		<form method="GET" action="/search">
+			<input type="text" name="query" placeholder="{{ query or 'Type a historical character...'}}" autocomplete="off"/>
+			<button class="button" type="submit">
+				<span class="icon">
+					<i class="fa fa-search"></i>
+				</span>
+				Search
+			</button>
+		</form>
+		{% if results %}
+			<ul class="results">
+				{% for result in results %}
+					<li class="item"><a href="/timeline?query={{result}}">{{result}}</a></li>
+				{% endfor %}
+			</ul>
+		{% endif %}
+	</div>
+{% endblock %}
